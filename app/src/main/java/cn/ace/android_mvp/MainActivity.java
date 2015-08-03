@@ -64,43 +64,67 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
 
+    /**获取用户名
+     * @return
+     */
     @Override
     public String getUserName() {
         return etUsername.getText().toString();
     }
 
+    /**获取密码
+     * @return
+     */
     @Override
     public String getPassword() {
         return etPassword.getText().toString();
     }
 
+    /**
+     * 清除用户名
+     */
     @Override
     public void cleanUserName() {
         etUsername.setText("");
     }
 
+    /**
+     * 清除密码
+     */
     @Override
     public void cleanPassword() {
         etPassword.setText("");
     }
 
+    /**
+     * 显示对话框
+     */
     @Override
     public void showLoading() {
         progressBar.setVisibility(View.VISIBLE);
 
     }
 
+    /**
+     * 隐藏对话框
+     */
     @Override
     public void hideLoading() {
         progressBar.setVisibility(View.GONE);
     }
 
+    /**登录成功，进入主页
+     * @param user
+     */
     @Override
     public void toMainActivity(User user) {
         Toast.makeText(this, user.getUsername() +
                 " login success , to MainActivity", Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 登录失败
+     */
     @Override
     public void showFailedError() {
         Toast.makeText(this,
